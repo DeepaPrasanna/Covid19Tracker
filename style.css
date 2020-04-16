@@ -17,6 +17,11 @@ body {
   background-color: #ffecec;
   margin: 20px 0px 40px 0px;
 }
+#head {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
 .marquee {
   animation: marquee 10s linear infinite;
 }
@@ -70,19 +75,42 @@ img {
 
 ul.horizontal-list li {
   padding: 0px 10px 0px 10px;
+  width: 100px;
+  text-align: center;
 }
 .list-items {
   background-color: #eceeef;
   border-bottom-style: groove;
   border-top-style: groove;
   margin: 2px 0px 2px 0px;
-  /* display: flex;
-  justify-content: space-evenly; */
 }
-.column-2 > p {
+.column-2 > div {
   color: #2381fb;
   font-weight: bold;
   font-size: 15px;
   text-align: center;
   font-family: "Lexend Giga", sans-serif;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+@media only screen and (max-width: 925px) {
+  .main-class {
+    flex-direction: column;
+  }
+  .mask {
+    width: 35%;
+    margin: 50px 0px;
+  }
+  .column-2 {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .column-2 {
+    margin-right: 0px;
+    width: 100%;
+  }
 }
