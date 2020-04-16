@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Covid19 Tracker India</title>
+    <title>COVID-19 Tracker India</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -11,12 +16,15 @@
     <nav>COVID-19 Tracker India</nav>
 
     <header>
-      <h1 class="heading">
-        <div class="marquee">
-          Total cases:6500 &nbsp &nbsp Total recovered:456 &nbsp &nbsp total
-          deaths:6764
-        </div>
-      </h1>
+      <div class="heading">
+        <h1 class="marquee">
+          <ul id="head" class="horizontal-list">
+            <!-- <li>Total cases</li>
+            <li>Total recovered</li>
+            <li>Total deaths</li> -->
+          </ul>
+        </h1>
+      </div>
     </header>
 
     <main class="main-class">
@@ -30,7 +38,7 @@
             <li>deaths</li>
           </ul>
         </div>
-        <div class="table-items">
+        <div id="table-items">
           <!-- <ul class="list-items horizontal-list"> -->
           <!-- <li id="state">Maharashtra</li>
             <li id="confirmed">654</li>
@@ -41,11 +49,17 @@
         </div>
       </div>
       <div class="column-2">
-        <img src="assests/images/mask.jpeg" class="mask" />
-        <p>
-          Stay safe<br />Practise social distancing<br />wash hands
-          frequently<br />listen to the authorities
-        </p>
+        <img
+          src="assests/images/mask.jpeg"
+          class="mask"
+          alt="a man wearing a
+        mask"
+          aria-label="a man wearing a mask"
+        />
+        <p>Stay safe</p>
+        <p>Practise social distancing</p>
+        <p>wash hands frequently</p>
+        <p>listen to the authorities</p>
       </div>
     </main>
 
@@ -55,21 +69,17 @@
         href="https://github.com/deepaprasanna"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="follow me on github"
       >
-        <img src="assests/images/github.svg"
+        <img src="assests/images/github.svg" alt="github logo"
       /></a>
       <a
         href="https://www.linkedin.com/in/annedeepa/"
         target="_blank"
         rel="noopener noreferrer"
-        ><img src="assests/images/linkedin.svg"
+        aria-label="follow me on linkedin"
+        ><img src="assests/images/linkedin.svg" alt="linkedin logo"
       /></a>
-      <!-- <a
-        href="https://www.linkedin.com/in/annedeepa/"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><img src="assests/images/mask.jpeg" class="mask"
-      /></a> -->
     </footer>
 
     <script src="main.js"></script>
