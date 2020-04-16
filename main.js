@@ -1,36 +1,37 @@
-let state = document.getElementById("state")
-// fetch('https://api.covid19india.org/data.json')
-//     .then((response) => {
-//         // console.log(response)
-//         return response.json();
-//     })
-//     .then((data) => {
-//         let arr = data.statewise;
-//         console.log(arr)
-//         for (let i = 0; i < arr.length; i++) {
-//             console.log(arr[i].state + "\n" + arr[i].confirmed);
-//         }
-//     })
-//     
 const API_URL = 'https://api.covid19india.org/data.json'
-// let ul = document.querySelector(".list-items")
-let div = document.querySelector(".table-items")
+let div = document.querySelector("#table-items")
+let head = document.querySelector("#head")
 
 async function coronaData() {
     const response = await fetch(API_URL);
     const data = await response.json();
-    // console.log(data.statewise); 
-    for (let i = 0; i < data.statewise.length; i++) {
-        const { active, confirmed, deaths, state } = data.statewise[i];
-        // console.log(active)
-        // console.log(confirmed)
-        // console.log(deaths)
-        // console.log(state)
-        // document.getElementById("state").textContent = state;
-        // document.getElementById("confirmed").textContent = confirmed;
-        // document.getElementById("deaths").textContent = deaths;
+    // console.log(data.statewise);
 
-        // document.getElementById("active").textContent = active;
+    // retreives and shows the  total statistics of coronavirus infections in India
+    const { active, confirmed, deaths, recovered } = data.statewise[0];
+
+    let totalConfirmed = document.createElement("li");
+    totalConfirmed.textContent = `Confirmed : ${confirmed}`
+    head.appendChild(totalConfirmed);
+
+    let totalActive = document.createElement("li");
+    totalActive.textContent = `Active : ${active}`
+    head.appendChild(totalActive);
+
+    let totalRecovered = document.createElement("li");
+    totalRecovered.textContent = `Recovered : ${recovered}`
+    head.appendChild(totalRecovered);
+
+    let totalDeaths = document.createElement("li");
+    totalDeaths.textContent = `Deaths: ${deaths}`
+    head.appendChild(totalDeaths);
+
+
+
+    //retreiving the data of each state and appending the data as list items to the parent ul tag
+    for (let i = 1; i < data.statewise.length; i++) {
+        const { active, confirmed, deaths, state, recovered } = data.statewise[i];
+
         let ul = document.createElement("ul")
         ul.classList.add("list-items")
         ul.classList.add("horizontal-list")
@@ -39,26 +40,25 @@ async function coronaData() {
         stateItem.textContent = state;
         ul.appendChild(stateItem);
 
+        let confirmedItem = document.createElement("li")
+        confirmedItem.textContent = confirmed;
+        ul.appendChild(confirmedItem);
+
         let activeItem = document.createElement("li");
         activeItem.textContent = active;
         ul.appendChild(activeItem);
 
-        let confirmedItem = document.createElement("li")
-        confirmedItem.textContent = confirmed;
-        ul.appendChild(confirmedItem);
+        let recoveredItem = document.createElement("li");
+        recoveredItem.textContent = recovered;
+        ul.appendChild(recoveredItem);
 
         let deathItem = document.createElement("li");
         deathItem.textContent = deaths;
         ul.appendChild(deathItem);
 
+        //finally, append the created ul tag to the parent div tag
         div.appendChild(ul);
-
-
-
-
-
     }
-
 }
 coronaData().catch(error => {
     console.error(error);
