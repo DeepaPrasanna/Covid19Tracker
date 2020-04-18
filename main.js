@@ -10,19 +10,19 @@ async function coronaData() {
     // retreives and shows the  total statistics of coronavirus infections in India
     const { active, confirmed, deaths, recovered } = data.statewise[0];
 
-    let totalConfirmed = document.createElement("li");
+    let totalConfirmed = document.createElement("div");
     totalConfirmed.textContent = `Confirmed : ${confirmed}`
     head.appendChild(totalConfirmed);
 
-    let totalActive = document.createElement("li");
+    let totalActive = document.createElement("div");
     totalActive.textContent = `Active : ${active}`
     head.appendChild(totalActive);
 
-    let totalRecovered = document.createElement("li");
+    let totalRecovered = document.createElement("div");
     totalRecovered.textContent = `Recovered : ${recovered}`
     head.appendChild(totalRecovered);
 
-    let totalDeaths = document.createElement("li");
+    let totalDeaths = document.createElement("div");
     totalDeaths.textContent = `Deaths: ${deaths}`
     head.appendChild(totalDeaths);
 
