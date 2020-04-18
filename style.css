@@ -21,9 +21,12 @@ body {
   list-style: none;
   display: flex;
   justify-content: space-around;
+  font-size: 20px;
+  font-weight: bold;
 }
+
 .marquee {
-  animation: marquee 10s linear infinite;
+  animation: marquee 12s linear infinite;
 }
 @keyframes marquee {
   0% {
@@ -74,9 +77,10 @@ img {
 }
 
 ul.horizontal-list li {
-  padding: 0px 10px 0px 10px;
+  /* padding: 0px 10px 0px 10px; */
   width: 100px;
   text-align: center;
+  font-size: 0.9rem;
 }
 .list-items {
   background-color: #eceeef;
@@ -95,6 +99,7 @@ ul.horizontal-list li {
   justify-content: center;
   flex-direction: column;
 }
+/*use of media queries*/
 @media only screen and (max-width: 925px) {
   .main-class {
     flex-direction: column;
@@ -107,10 +112,159 @@ ul.horizontal-list li {
     display: flex;
     flex-direction: row-reverse;
   }
+  .column-1 {
+    margin: 2rem;
+  }
+  /* #head{
+    display: flex;
+    flex-direction: row;
+
+  } */
+  #head li {
+    width: 100px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #head {
+    font-size: 1rem;
+  }
 }
 @media only screen and (max-width: 620px) {
   .column-2 {
     margin-right: 0px;
     width: 100%;
+  }
+}
+@media only screen and (max-width: 690px) {
+  ul.horizontal-list li {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 580px) {
+  #head {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 515px) {
+  ul.horizontal-list li {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 459px) {
+  #head {
+    font-size: 0.7rem;
+  }
+  .heading {
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  ul.horizontal-list li {
+    font-size: 0.7rem;
+  }
+}
+@media only screen and (max-width: 430px) {
+  #head {
+    font-size: 0.6rem;
+  }
+}
+@media only screen and (max-width: 406px) {
+  .column-2 > div {
+    font-size: 0.6rem;
+  }
+}
+@media only screen and (max-width: 390px) {
+  ul.horizontal-list li {
+    font-size: 0.6rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  ul.horizontal-list li {
+    font-size: 0.55rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  ul.horizontal-list li {
+    font-size: 0.5rem;
+  }
+  .column-1 {
+    margin: 1rem;
+  }
+}
+@media only screen and (max-width: 304px) {
+  ul.horizontal-list li {
+    font-size: 0.4rem;
+  }
+}
+@media only screen and (max-width: 280px) {
+  footer {
+    font-size: small;
+  }
+}
+@media only screen and (max-width: 255px) {
+  ul.horizontal-list li {
+    font-size: 0.35rem;
+  }
+}
+@media only screen and (max-width: 259px) {
+  .column-2 > div {
+    font-size: 0.5rem;
+  }
+  .main-class {
+    margin-bottom: 100px;
+  }
+  #head {
+    font-size: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 201px) {
+  ul.horizontal-list li {
+    font-size: 0.3rem;
+  }
+}
+@media only screen and (max-width: 216px) {
+  .column-2 > div {
+    font-size: 0.4rem;
+  }
+  #head {
+    font-size: 0.4rem;
+  }
+}
+@media only screen and (max-width: 177px) {
+  ul.horizontal-list li {
+    font-size: 0.25rem;
+  }
+  .column-2 > div {
+    font-size: 0.3rem;
+  }
+  .main-class {
+    margin-bottom: 20px;
+  }
+  footer {
+    font-size: smaller;
+  }
+  img {
+    width: 0.7rem;
+  }
+}
+@media only screen and (max-width: 153px) {
+  ul.horizontal-list li {
+    font-size: 0.05rem;
+  }
+  img {
+    width: 0.6rem;
+  }
+}
+@media only screen and (max-width: 149px) {
+  ul.horizontal-list li {
+    font-size: 0.035rem;
+  }
+  img {
+    width: 0.5rem;
+  }
+  footer {
+    font-size: x-small;
   }
 }
