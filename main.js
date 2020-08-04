@@ -62,4 +62,4 @@ async function coronaData() {
 }
 coronaData().catch(error => {
     console.error(error);
-});;
+});
